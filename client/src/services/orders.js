@@ -3,13 +3,13 @@ import axios from "axios"
 axios.defaults.url = "/api";
 
 const AxiosPlaceOrder = async (val) => {
-    var res = await axios.post("http://localhost:4000/api/order/new", val)
+    var res = await axios.post("https://canteen-app-2.herokuapp.com/api/order/new", val)
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 
 const AxiosGetOrders = async () => {
-    var res = await axios.get("http://localhost:4000/api/order/")
+    var res = await axios.get("https://canteen-app-2.herokuapp.com/api/order/")
     if (!res || res.data.status === 1) {
         // console.log(res.data.error)
     }
@@ -17,47 +17,47 @@ const AxiosGetOrders = async () => {
 }
 
 const AxiosPickUp = async (id) => {
-    var res = await axios.post("http://localhost:4000/api/order/pickup", {pid: id})
+    var res = await axios.post("https://canteen-app-2.herokuapp.com/api/order/pickup", {pid: id})
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 
 const AxiosRateOrder = async (val) => {
-    var res = await axios.post("http://localhost:4000/api/order/rate", val)
+    var res = await axios.post("https://canteen-app-2.herokuapp.com/api/order/rate", val)
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 
 const AxiosOrderAccept = async (val) => {
-    var res = await axios.post("http://localhost:4000/api/order/accept", val)
+    var res = await axios.post("https://canteen-app-2.herokuapp.com/api/order/accept", val)
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 const AxiosOrderReject = async (val) => {
-    var res = await axios.post("http://localhost:4000/api/order/reject", val)
+    var res = await axios.post("https://canteen-app-2.herokuapp.com/api/order/reject", val)
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 const AxiosOrderProgress = async (val) => {
-    var res = await axios.post("http://localhost:4000/api/order/progress", val)
+    var res = await axios.post("https://canteen-app-2.herokuapp.com/api/order/progress", val)
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 
 const AxiosGetProductStats = async () => {
-    var res = await axios.get("http://localhost:4000/api/order/stats")
+    var res = await axios.get("https://canteen-app-2.herokuapp.com/api/order/stats")
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 
 const AxiosGetAgeStats = async () => {
-    var res = await axios.get("http://localhost:4000/api/order/agestats")
+    var res = await axios.get("https://canteen-app-2.herokuapp.com/api/order/agestats")
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }
 
 const AxiosGetBatchStats = async () => {
-    var res = await axios.get("http://localhost:4000/api/order/batchstats")
+    var res = await axios.get("https://canteen-app-2.herokuapp.com/api/order/batchstats")
     if (!res || res.data.status === 1) console.log(res.data.error)
     return res.data
 }

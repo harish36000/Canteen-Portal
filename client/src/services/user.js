@@ -3,7 +3,7 @@ import axios from "axios"
 axios.defaults.url = "/api";
 
 const AxiosGetUserProfile = async () => {
-    let res = await axios.get("http://localhost:4000/api/user/profile");
+    let res = await axios.get("https://canteen-app-2.herokuapp.com/api/user/profile");
     if (!res) {
         console.log("Axios GET error")
         return null;
@@ -17,7 +17,7 @@ const AxiosGetUserProfile = async () => {
 }
 
 const AxiosUpdateUserProfile = async (user) => {
-    let res = await axios.post("http://localhost:4000/api/user/profile/update", user);
+    let res = await axios.post("https://canteen-app-2.herokuapp.com/api/user/profile/update", user);
     if (!res) {
         console.log("Axios POST error")
         return null;

@@ -1,11 +1,11 @@
 import axios from "axios"
 
 // axios.defaults.url = "/api";
-// axios.defaults.url = "http://localhost:4000/api";
+// axios.defaults.url = "https://canteen-app-2.herokuapp.com/api";
 
 const AxiosRegister = async (user) => {
     // const res = await axios.post("/auth/register", user);
-    const res = await axios.post("http://localhost:4000/api/auth/register", user);
+    const res = await axios.post("https://canteen-app-2.herokuapp.com/api/auth/register", user);
     if (!res) {
         console.log("Failed to axios post")
         return res
@@ -18,7 +18,7 @@ const AxiosRegister = async (user) => {
 }
 
 const AxiosLogin = async (user) => {
-    const res = await axios.post("http://localhost:4000/api/auth/login", user);
+    const res = await axios.post("https://canteen-app-2.herokuapp.com/api/auth/login", user);
     if (!res) {
             console.log("Failed to axios post")
             return res
@@ -40,7 +40,7 @@ const AxiosGetUser = async () => {
     }
     if (token)
         axios.defaults.headers.common["Authorization"] = token;
-    var res = await axios.get("http://localhost:4000/api/user/ret");
+    var res = await axios.get("https://canteen-app-2.herokuapp.com/api/user/ret");
     if (res.data.status === 1) {
         try {
             window.localStorage.removeItem("Authorization")
@@ -68,9 +68,9 @@ const AxiosValidateOTP = async (otp, userID) => {
         OTP: otp
     }
 
-    // const res = await axios.post("http://localhost:4000/api/auth/verifyOTP", userID, otp);
+    // const res = await axios.post("https://canteen-app-2.herokuapp.com/api/auth/verifyOTP", userID, otp);
     
-    const res = await axios.post("http://localhost:4000/api/auth/verifyOTP", req);
+    const res = await axios.post("https://canteen-app-2.herokuapp.com/api/auth/verifyOTP", req);
 
     console.log("RESPONSE FROM VERIFYOTP API");
     console.log(res);
